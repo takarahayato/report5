@@ -8,7 +8,7 @@ package jp.ac.uryukyu.ie.e185734;
  *  int hitPoint; //敵のHP
  *  int attack; //敵の攻撃力
  *  boolean dead; //敵の生死状態。true=死亡。
- * Created by tnal on 2016/11/13.
+ * Created by e185734 on 2016/11/13.
  */
 public class LivingThing {
     private String name;
@@ -30,10 +30,16 @@ public class LivingThing {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
+
     public boolean isDead(){
         return  dead;
     }
+    /**
+     *hitpointをgetする
+     * @return hitPoint
+     */
     public int getHitPoint(){
+
         return hitPoint;
     }
 
@@ -49,6 +55,10 @@ public class LivingThing {
         return name;
     }
 
+    /**
+     * ランダムに攻撃を与える
+     * @param opponent
+     */
     public void attack(LivingThing opponent) {
         if (!isDead()) {
             int damage = (int) (Math.random() * attack);
